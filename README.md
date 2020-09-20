@@ -13,3 +13,5 @@ Open vim and execute this command to install plugins.
 ```
 :PlugInstall
 ```
+## Shortcut key
+- F1 : NERDTreeToggle
