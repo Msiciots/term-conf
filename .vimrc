@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin() 
 Plug 'preservim/NERDTree'
 Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
@@ -9,10 +9,10 @@ nmap <F1> :NERDTreeToggle<CR>
 syntax on
 
 set nu
+nnoremap <F2> :set nornu!<CR>
 set shiftwidth=4
 set expandtab
 set tabstop=4
 
 colorscheme gruvbox
-set background=dark
-
+set background=dark 
