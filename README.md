@@ -15,3 +15,4 @@ Open vim and execute this command to install plugins.
 ```
 ## Shortcut key
 - F1 : NERDTreeToggle
+- F2 : Toggle of relative line number 
