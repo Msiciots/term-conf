@@ -1,18 +1,18 @@
-# My vim configuration
+# My terminal configuration
 ## Prerequisite
 - Vim 8 and above
-
+- tmux
 ## Configuration
 
 ```
 git clone https://github.com/Msiciots/vim-conf
-mv vim-conf/.vim ~/
-mv vim-conf/.vimrc ~/
+./setup.sh
 ```
 Open vim and execute this command to install plugins.
 ```
 :PlugInstall
 ```
 ## Shortcut key
+### vim
 - F1 : NERDTreeToggle
 - F2 : Toggle of relative line number 
