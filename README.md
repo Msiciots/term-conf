@@ -16,3 +16,4 @@ Open vim and execute this command to install plugins.
 ### vim
 - F1 : NERDTreeToggle
 - F2 : Toggle of relative line number 
+- <C-j> Replace with word
