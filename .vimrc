@@ -11,6 +11,8 @@ nmap <F1> :NERDTreeToggle<CR>
 
 set nu
 nnoremap <F2> :set nornu!<CR>
+" Not auto indent when pasting
+nnoremap <F3> :set nopaste!<CR>
 
 " replace word use <C-j>
 map <C-j> cw<C-r>0<ESC> 
@@ -18,7 +20,6 @@ map <C-j> cw<C-r>0<ESC>
 set shiftwidth=4
 set expandtab
 set tabstop=4
-
 "colorscheme gruvbox
 "set background=dark
 colorscheme jellybeans
