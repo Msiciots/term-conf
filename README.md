@@ -16,4 +16,5 @@ Open vim and execute this command to install plugins.
 ### vim
 - F1 : NERDTreeToggle
 - F2 : Toggle of relative line number 
+- F3 : set nopaste (paste without auto indenting)
 - <C-j> Replace with word
