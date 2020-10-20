@@ -4,6 +4,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'zxqfl/tabnine-vim'
 call plug#end()
 
 "au VimEnter *  NERDTree
