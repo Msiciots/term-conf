@@ -3,6 +3,7 @@ Plug 'preservim/NERDTree'
 Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'zxqfl/tabnine-vim'
 call plug#end()
@@ -23,7 +24,9 @@ set expandtab
 set tabstop=4
 "colorscheme gruvbox
 "set background=dark
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme dracula
+syntax enable
 
 autocmd FileType c call Cdefault()
 fu! Cdefault()
