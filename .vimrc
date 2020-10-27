@@ -27,7 +27,7 @@ set tabstop=4
 "colorscheme gruvbox
 "set background=dark
 "colorscheme jellybeans
-colorscheme dracula
+"colorscheme dracula
 "colorscheme snazzy
 "colorscheme dogrun
 "syntax on
