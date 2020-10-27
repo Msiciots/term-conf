@@ -7,6 +7,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'connorholyday/vim-snazzy'
 Plug 'wadackel/vim-dogrun'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'crusoexia/vim-monokai'
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
@@ -14,6 +16,7 @@ call plug#end()
 nmap <F1> :NERDTreeToggle<CR>
 
 set nu
+set cursorline
 nnoremap <F2> :set nornu!<CR>
 " Not auto indent when pasting
 nnoremap <F3> :set nopaste!<CR>
@@ -29,7 +32,9 @@ set tabstop=4
 "colorscheme jellybeans
 "colorscheme dracula
 "colorscheme snazzy
-"colorscheme dogrun
+"colorscheme palenight 
+"syntax on
+"colorscheme monokai
 "syntax on
 "syntax enable
 
@@ -37,9 +42,6 @@ syntax on
 set t_Co=256
 set cursorline
 colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
-" lightline
-" let g:lightline = { 'colorscheme': 'onehalfdark' }
 
 
 
