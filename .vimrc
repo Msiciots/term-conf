@@ -4,6 +4,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'connorholyday/vim-snazzy'
+Plug 'wadackel/vim-dogrun'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
@@ -23,9 +26,26 @@ set expandtab
 set tabstop=4
 "colorscheme gruvbox
 "set background=dark
-colorscheme jellybeans
-"colorscheme dracula
+"colorscheme jellybeans
+colorscheme dracula
+"colorscheme snazzy
+"colorscheme dogrun
+"syntax on
 "syntax enable
+
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+
+
+
+
+
+
 
 autocmd FileType c call Cdefault()
 fu! Cdefault()
