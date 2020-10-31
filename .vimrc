@@ -10,6 +10,8 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'crusoexia/vim-monokai'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "au VimEnter *  NERDTree
