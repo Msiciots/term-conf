@@ -29,6 +29,8 @@ map <C-j> cw<C-r>0<ESC>
 set shiftwidth=4
 set expandtab
 set tabstop=4
+" set mouse scroll 
+set mouse=a
 "colorscheme gruvbox
 "set background=dark
 "colorscheme jellybeans
