@@ -17,4 +17,5 @@ Open vim and execute this command to install plugins.
 - F1 : NERDTreeToggle
 - F2 : Toggle of relative line number 
 - F3 : set nopaste (paste without auto indenting)
+- F4 : Toggle of mouse=a
 - <C-j> Replace with word
