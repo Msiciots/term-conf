@@ -30,7 +30,17 @@ set shiftwidth=4
 set expandtab
 set tabstop=4
 " set mouse scroll 
-set mouse=a
+nnoremap <F4> :call ToggleMouse() <CR>
+function! ToggleMouse()
+    " check if mouse is enabled
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
+endfunc
 "colorscheme gruvbox
 "set background=dark
 "colorscheme jellybeans
