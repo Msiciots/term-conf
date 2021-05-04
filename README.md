@@ -5,8 +5,8 @@
 ## Configuration
 
 ```
-git clone https://github.com/Msiciots/vim-conf
-./setup.sh
+git clone https://github.com/Msiciots/term-conf
+./term-conf/setup.sh
 ```
 Open vim and execute this command to install plugins.
 ```
