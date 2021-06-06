@@ -25,6 +25,8 @@ nnoremap <F3> :set nopaste!<CR>
 
 " replace word use <C-j>
 map <C-j> cw<C-r>0<ESC> 
+" visual block mode
+nnoremap q <c-v>
 
 set shiftwidth=4
 set expandtab
