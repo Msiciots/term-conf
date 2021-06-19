@@ -54,15 +54,12 @@ endfunc
 "colorscheme monokai
 "syntax on
 "syntax enable
+colorscheme devbox-dark-256
 
 syntax on
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
-
-
-
-
+"colorscheme onehalfdark
 
 
 
