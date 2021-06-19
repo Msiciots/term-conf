@@ -12,6 +12,7 @@ Plug 'crusoexia/vim-monokai'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 "au VimEnter *  NERDTree
