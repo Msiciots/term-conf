@@ -1,7 +1,8 @@
 # My terminal configuration
-## Prerequisite
+## Tool list
 - Vim 8 and above
 - tmux
+- ranger
 ## Configuration
 
 ```
