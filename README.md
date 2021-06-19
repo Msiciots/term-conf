@@ -1,8 +1,11 @@
 # My terminal configuration
 ## Tool list
 - Vim 8 and above
+    - `sudo apt install vim`
 - tmux
+    - `sudo apt install tmux`
 - ranger
+    - `pip install ranger-fm`
 ## Configuration
 
 ```
