@@ -15,16 +15,32 @@ export BLASTDB=$HOME/Desktop/web/blastdb
 export PATH=$HOME/.local/bin:$PATH
 cd ~/Desktop
 
-function dump_before_exit {
-  if [[ -n $RANGER_LEVEL ]]; then
-    echo "$PWD" >| "/tmp/picked"
-  fi
-  exit
+function ranger {
+    local IFS=$'\t\n'
+    local tempfile="$(mktemp -t tmp.XXXXXX)"
+    local ranger_cmd=(
+        command
+        ranger
+        --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
+    )
+    
+    ${ranger_cmd[@]} "$@"
+    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
+        cd -- "$(cat "$tempfile")" || return
+    fi
+    command rm -f -- "$tempfile" 2>/dev/null
 }
 
-# zsh
-zle -N dump-before-exit dump_before_exit
-bindkey '^Q' dump-before-exit
+#function dump_before_exit {
+  #if [[ -n $RANGER_LEVEL ]]; then
+    #echo "$PWD" >| "/tmp/picked"
+  #fi
+  #exit
+#}
+
+## zsh
+#zle -N dump-before-exit dump_before_exit
+#bindkey 'Q' dump-before-exit
 
 # bash
 # bind '"\C-q":"dump_before_exit\C-m"'
