@@ -6,7 +6,7 @@
     - `sudo apt install tmux`
 - ranger
     - `pip install ranger-fm`
-- 'curl --upload-file ./hello.txt https://transfer.sh/hello.txt'
+- `curl --upload-file ./hello.txt https://transfer.sh/hello.txt`
 ## Configuration
 
 ```
