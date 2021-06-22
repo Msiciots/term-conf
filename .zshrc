@@ -149,4 +149,4 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias ls="exa --long --header --icons --git"
 alias cat="batcat"
-
+alias r="ranger"
