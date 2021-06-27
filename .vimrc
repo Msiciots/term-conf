@@ -13,6 +13,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
 
 "au VimEnter *  NERDTree
@@ -54,8 +55,8 @@ endfunc
 "colorscheme monokai
 "syntax on
 "syntax enable
-colorscheme devbox-dark-256
-
+"colorscheme devbox-dark-256
+colorscheme abstract
 syntax on
 set t_Co=256
 set cursorline
