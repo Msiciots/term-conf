@@ -21,6 +21,7 @@ nmap <F1> :NERDTreeToggle<CR>
 
 set nu
 set cursorline
+set nornu!
 nnoremap <F2> :set nornu!<CR>
 " Not auto indent when pasting
 nnoremap <F3> :set nopaste!<CR>
