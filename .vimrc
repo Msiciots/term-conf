@@ -38,6 +38,7 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeGitStatusConcealBrackets = 1
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 set nu
+set nornu!
 set cursorline
 "set nornu!
 nnoremap <F2> :set nornu!<CR>
