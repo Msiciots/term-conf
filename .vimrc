@@ -1,5 +1,9 @@
 call plug#begin()
-Plug 'preservim/NERDTree'
+"Plug 'preservim/NERDTree'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
@@ -14,14 +18,27 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'trusktr/seti.vim'
 call plug#end()
 
 "au VimEnter *  NERDTree
 nmap <F1> :NERDTreeToggle<CR>
-
+set encoding=UTF-8
+let g:airline_powerline_fonts = 1
+"let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
+"let g:NERDTreeGitStatusShowClean = 1
+"let g:webdevicons_enable_nerdtree = 1
+"let g:webdevicons_conceal_nerdtree_brackets = 1
+"let g:webdevicons_enable_unite = 1
+"let g:NERDTreeFileExtensionHighlightFullName = 0
+let g:NERDTreeExactMatchHighlightFullName = 0
+"let g:NERDTreePatternMatchHighlightFullName = 0
+"let g:NERDTreeGitStatusConcealBrackets = 1
+"set guifont=DroidSansMono\ Nerd\ Font\ 11
 set nu
 set cursorline
-set nornu!
+"set nornu!
 nnoremap <F2> :set nornu!<CR>
 " Not auto indent when pasting
 nnoremap <F3> :set nopaste!<CR>
@@ -57,6 +74,7 @@ endfunc
 "syntax on
 "syntax enable
 "colorscheme devbox-dark-256
+"colorscheme seti 
 colorscheme abstract
 syntax on
 set t_Co=256
@@ -75,3 +93,46 @@ fu! Cdefault()
         call append(5, "}")
     endif
 endfu
+
+
+
+
+" DTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+au VimEnter * call NERDTreeHighlightFile('py', 'green', 'none', 'green', '#151515')
+au VimEnter * call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+au VimEnter * call NERDTreeHighlightFile('ipynb', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+au VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+au VimEnter * call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+au VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+au VimEnter * call NERDTreeHighlightFile('gitignore', 'Red', 'none', '#ffa500', '#151515')
+au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
+
+
+"augroup nerdtree
+  "autocmd!
+  "autocmd FileType nerdtree syntax clear NERDTreeFlags
+  "autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
+  "autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
+  "autocmd FileType nerdtree setlocal conceallevel=3
+  "autocmd FileType nerdtree setlocal concealcursor=nvic
+"augroup END
+
+augroup nerdtreeconcealbrackets
+      autocmd!
+      autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
+      autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
+      autocmd FileType nerdtree setlocal conceallevel=3
+      autocmd FileType nerdtree setlocal concealcursor=nvic
+augroup END
