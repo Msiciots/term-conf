@@ -13,7 +13,11 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH=$PATH:$HOME/Desktop/web/ncbi-blast-2.11.0+/bin
 export BLASTDB=$HOME/Desktop/web/blastdb
 export PATH=$HOME/.local/bin:$PATH
-cd ~/Desktop
+#cd ~/Desktop
+export START="/home/cosbi20/Desktop"
+if [[ $PWD == $HOME ]]; then
+    cd $START
+fi
 
 function ranger {
     local IFS=$'\t\n'
