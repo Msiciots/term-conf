@@ -2,7 +2,7 @@ call plug#begin()
 "Plug 'preservim/NERDTree'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
+            \ Plug 'ryanoasis/vim-devicons' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
@@ -21,8 +21,11 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
 call plug#end()
 
-"au VimEnter *  NERDTree
+au VimEnter *  NERDTree
+autocmd VimEnter * wincmd p
+autocmd BufWinEnter * NERDTreeMirror
 nmap <F1> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='<Tab>'
 let NERDTreeShowHidden=1
 set encoding=UTF-8
 let g:airline_powerline_fonts = 1
@@ -38,6 +41,7 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeGitStatusConcealBrackets = 1
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 set nu
+set nornu!
 set cursorline
 "set nornu!
 nnoremap <F2> :set nornu!<CR>
