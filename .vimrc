@@ -23,6 +23,7 @@ call plug#end()
 
 au VimEnter *  NERDTree
 autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd BufWinEnter * NERDTreeMirror
 nmap <F1> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<Tab>'
