@@ -153,14 +153,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias ls="exa --long --header --icons --git"
 alias cat="batcat"
-function lst() {
-    echo $1...
-if [ -z "$1" ]
-then
-    echo "ttt"
-fi
-}
 alias r="ranger"
+
 function lst {
     echo $1...
     if ! [ -z "$1" ]
