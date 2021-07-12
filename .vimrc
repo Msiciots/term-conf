@@ -2,7 +2,7 @@ call plug#begin()
 "Plug 'preservim/NERDTree'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
+            \ Plug 'ryanoasis/vim-devicons' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'morhetz/gruvbox'
@@ -21,8 +21,12 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
 call plug#end()
 
-"au VimEnter *  NERDTree
+au VimEnter *  NERDTree
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWinEnter * NERDTreeMirror
 nmap <F1> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='<Tab>'
 let NERDTreeShowHidden=1
 set encoding=UTF-8
 let g:airline_powerline_fonts = 1
