@@ -17,6 +17,10 @@ Open vim and execute this command to install plugins.
 ```
 :PlugInstall
 ```
+Custom welcome messages.
+```
+cp ./term-conf/01-custom /etc/update-motd.d/01-custom
+```
 ## Shortcut key
 ### Vim
 - F1 : NERDTreeToggle
