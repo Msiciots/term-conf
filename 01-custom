@@ -7,4 +7,4 @@ export TERM=xterm; inxi -D
 echo
 echo "CURRENT WEATHER AT THE LOCATION"
 # Show weather information. Change the city name to fit your location
-ansiweather -l tainan -s true 
+ansiweather -l tainan -s true -a false 
