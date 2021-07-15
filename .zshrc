@@ -154,7 +154,6 @@ source $ZSH/oh-my-zsh.sh
 alias ls="exa --long --header --icons --git"
 alias cat="batcat"
 alias r="ranger"
-
 function lst {
     echo $1...
     if ! [ -z "$1" ]
@@ -167,3 +166,6 @@ function lst {
         fi
     fi
 }
+
+
+neofetch
