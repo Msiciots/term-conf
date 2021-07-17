@@ -1,14 +1,15 @@
 syn match cTypeCustom "\<[a-zA-Z_][a-zA-Z0-9_]*_[t]\>"
-hi cTypeCustom ctermfg=darkblue guifg=darkblue
-
+"hi cTypeCustom ctermfg=darkblue guifg=darkblue
+hi cTypeCustom ctermfg=darkgreen guifg=darkgreen 
 " Vim syntax file
 " Language:	C Additions
 " Maintainer:	Mikhail Wolfson <mywolfson@gmail.com>
 " URL: http://web.mit.edu/wolfsonm
-" Last Change:	2010 Dec. 3
-" Version: 0.4
+" Last Change:	2017 Dec. 4
+" Version: 0.5
 "
 " Changelog:
+"   0.5 - add support for constants -- github.com/agfline
 "   0.4 - updates and fixes to cDelimiter to fix break with foldmethod=syntax,
 "         entirely suggested and solved by Ivan Freitas
 "         <ivansichfreitas@gmail.com>
@@ -255,6 +256,10 @@ syn match cOperator	"[][]"
 syn keyword cDefined defined contained containedin=cDefine
 hi def link cDefined cDefine
 
+" Constants
+syn match cDefined "\<[A-Z][A-Z0-9_]*\>" 
+hi def link cDefined cDefine
+
 " Functions
 syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
 syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
@@ -267,10 +272,8 @@ syn match cDelimiter    "[();\\]"
 " foldmethod=syntax fix, courtesy of Ivan Freitas
 syn match cBraces display "[{}]"
 
-
 " Booleans
 syn keyword cBoolean true false TRUE FALSE
-
 
 " Links
 hi def link cFunction Function
