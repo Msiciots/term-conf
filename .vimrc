@@ -5,6 +5,8 @@ Plug 'preservim/nerdtree' |
             \ Plug 'ryanoasis/vim-devicons' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
+Plug 'octol/vim-cpp-enhanced-highlight'
+" color themes
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -13,13 +15,15 @@ Plug 'wadackel/vim-dogrun'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'crusoexia/vim-monokai'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
+Plug 'tomasiser/vim-code-dark'
+
 call plug#end()
+
 
 au VimEnter *  NERDTree
 autocmd VimEnter * wincmd p
@@ -41,6 +45,7 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 "let g:NERDTreePatternMatchHighlightFullName = 0
 let g:NERDTreeGitStatusConcealBrackets = 1
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
+
 set nu
 set nornu!
 set cursorline
@@ -57,6 +62,10 @@ nnoremap q <c-v>
 set shiftwidth=4
 set expandtab
 set tabstop=4
+syntax on
+set t_Co=256
+set cursorline
+
 " set mouse scroll 
 nnoremap <F4> :call ToggleMouse() <CR>
 function! ToggleMouse()
@@ -69,23 +78,23 @@ function! ToggleMouse()
         set mouse=a
     endif
 endfunc
+
+
 "colorscheme gruvbox
 "set background=dark
 "colorscheme jellybeans
 "colorscheme dracula
 "colorscheme snazzy
 "colorscheme palenight 
-"syntax on
 "colorscheme monokai
+"colorscheme onehalfdark
 "syntax on
 "syntax enable
-"colorscheme devbox-dark-256
+colorscheme devbox-dark-256
 "colorscheme seti 
-colorscheme abstract
-syntax on
-set t_Co=256
-set cursorline
-"colorscheme onehalfdark
+"colorscheme abstract
+"colorscheme codedark
+let g:airline_theme = 'codedark'
 
 
 
@@ -100,10 +109,7 @@ fu! Cdefault()
     endif
 endfu
 
-
-
-
-
+" About nerdtree
 " you can add these colors to your .vimrc to help customizing
 let s:brown = "905532"
 let s:aqua =  "3AFFDB"
