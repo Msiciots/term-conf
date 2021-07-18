@@ -27,11 +27,11 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - F2 : Toggle of relative line number 
 - F3 : set nopaste (paste without auto indenting)
 - F4 : Toggle of mouse=a
-- <C-j> Replace with word
+- C-j Replace with word
 - q : Into visual block mode
 #### NerdTree
-- <tab> : Open file in new tab.
-- <i> : Open file with herizontal split.
-- <s> : Open file with vertical split.
+- tab : Open file in new tab.
+- i : Open file with herizontal split.
+- s : Open file with vertical split.
 #### Reference
 - [list of flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes/tree/master/colors)
