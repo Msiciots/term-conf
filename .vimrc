@@ -24,7 +24,7 @@ Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
-
+""" NerdTree configure
 au VimEnter *  NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -32,7 +32,6 @@ autocmd BufWinEnter * NERDTreeMirror
 nmap <F1> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<Tab>'
 let NERDTreeShowHidden=1
-set encoding=UTF-8
 let g:airline_powerline_fonts = 1
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
@@ -45,7 +44,9 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 "let g:NERDTreePatternMatchHighlightFullName = 0
 let g:NERDTreeGitStatusConcealBrackets = 1
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
+ 
 
+set encoding=UTF-8
 set nu
 set nornu!
 set cursorline
@@ -80,22 +81,22 @@ function! ToggleMouse()
 endfunc
 
 
-"colorscheme gruvbox
-"set background=dark
-"colorscheme jellybeans
-"colorscheme dracula
-"colorscheme snazzy
-"colorscheme palenight 
-"colorscheme monokai
-"colorscheme onehalfdark
-"syntax on
-"syntax enable
-colorscheme devbox-dark-256
-"colorscheme seti 
-"colorscheme abstract
-"colorscheme codedark
-let g:airline_theme = 'codedark'
+function Rand()
+    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+endfunction
 
+function RandomColorThemes()
+    let themes = ["gruvbox", "jellybeans", "dracula","snazzy","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark"]
+
+    let r = Rand()%len(themes)
+    execute "colorscheme ".themes[r] 
+endfunction
+
+au VimEnter * call RandomColorThemes()
+
+set background=dark
+syntax on
+syntax enable
 
 
 autocmd FileType c call Cdefault()
