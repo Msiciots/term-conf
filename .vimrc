@@ -10,7 +10,6 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'connorholyday/vim-snazzy'
 Plug 'wadackel/vim-dogrun'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'drewtempelmeyer/palenight.vim'
@@ -86,7 +85,7 @@ function Rand()
 endfunction
 
 function RandomColorThemes()
-    let themes = ["gruvbox", "jellybeans", "dracula","snazzy","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark"]
+    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark"]
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
