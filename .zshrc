@@ -166,6 +166,3 @@ function lst {
         fi
     fi
 }
-
-
-neofetch
