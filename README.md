@@ -35,3 +35,4 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - s : Open file with vertical split.
 #### Reference
 - [list of flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes/tree/master/colors)
+- [vim-visual-multi](https://github.com/mg979/vim-visual-multi)

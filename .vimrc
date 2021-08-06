@@ -6,6 +6,7 @@ Plug 'preservim/nerdtree' |
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " color themes
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
