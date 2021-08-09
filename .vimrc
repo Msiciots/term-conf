@@ -93,7 +93,17 @@ function RandomColorThemes()
     "execute "colorscheme 3dglasses" 
 endfunction
 
-au VimEnter * call RandomColorThemes()
+call RandomColorThemes()
+
+function RandomColorScheme()
+  let mycolors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
+  exe 'so ' . mycolors[localtime() % len(mycolors)]
+  unlet mycolors
+endfunction
+
+"call RandomColorScheme()
+nnoremap <F5> :call RandomColorScheme() <CR>
+
 
 set background=dark
 syntax on
