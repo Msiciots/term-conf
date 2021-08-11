@@ -36,3 +36,5 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 #### Reference
 - [list of flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes/tree/master/colors)
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
+- [vim-easyclip](https://github.com/svermeulen/vim-easyclip)
+- https://tmuxcheatsheet.com/
