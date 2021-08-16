@@ -8,6 +8,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'svermeulen/vim-easyclip'
+Plug 'jiangmiao/auto-pairs'
 " color themes
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
@@ -22,7 +23,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
 Plug 'tomasiser/vim-code-dark'
-
 call plug#end()
 
 """ NerdTree configure
@@ -92,14 +92,14 @@ function Rand()
 endfunction
 
 function RandomColorThemes()
-    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark",'256_noir', 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'flattened_dark', 'focuspoint', 'github', 'gotham', 'gotham256', 'gruvbox', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucid', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'OceanicNextLight', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rakr', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'sunbather', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
+    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark",'256_noir', 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'flattened_dark', 'focuspoint', 'github', 'gotham', 'gotham256', 'gruvbox', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucid', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'OceanicNextLight', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rakr', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
     "execute "colorscheme 3dglasses" 
 endfunction
 
-"call RandomColorThemes()
+call RandomColorThemes()
 
 "function RandomColorScheme()
   "let mycolors = split(globpath(&rtp,"**/colors/*.vim"),"\n") 
