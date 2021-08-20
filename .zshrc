@@ -154,6 +154,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls="exa --long --header --icons --git"
 alias cat="batcat"
 alias r="ranger"
+alias vim="nvim"
 function lst {
     echo $1...
     if ! [ -z "$1" ]

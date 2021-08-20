@@ -1,4 +1,5 @@
-call plug#begin()
+"call plug#begin()
+call plug#begin('~/.vim/plugged')
 "Plug 'preservim/NERDTree'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
@@ -9,6 +10,10 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'svermeulen/vim-easyclip'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
+Plug 'luochen1990/rainbow'
+Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " color themes
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
@@ -46,7 +51,7 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeGitStatusConcealBrackets = 1
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
-""" easyclip settings
+""" replace gm with m (mark), because easyclip make m become original d
 nnoremap gm m
 set clipboard=unnamed
 let g:EasyClipShareYanks=1
@@ -58,6 +63,8 @@ set nornu!
 set cursorline
 "set nornu!
 nnoremap <F2> :set nornu!<CR>
+"set nu!
+nnoremap <F6> :set nu!<CR>
 " Not auto indent when pasting
 nnoremap <F3> :set nopaste!<CR>
 
@@ -72,6 +79,22 @@ set tabstop=4
 syntax on
 set t_Co=256
 set cursorline
+
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
+let g:tagbar_width=30
+nnoremap <silent> <F5> :TagbarToggle<CR> 
+
+" Match <tab> to C-n for auto-complete
+"function! InsertTabWrapper()
+    "let col = col('.') - 1
+    "if !col || getline('.')[col - 1] !~ '\k'
+        "return "\<tab>"
+    "else
+        "return "\<c-p>"
+    "endif
+"endfunction
+"inoremap <expr> <tab> InsertTabWrapper()
+"inoremap <s-tab> <c-n>
 
 " set mouse scroll 
 nnoremap <F4> :call ToggleMouse() <CR>
@@ -92,7 +115,7 @@ function Rand()
 endfunction
 
 function RandomColorThemes()
-    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark",'256_noir', 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'flattened_dark', 'focuspoint', 'github', 'gotham', 'gotham256', 'gruvbox', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucid', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'OceanicNextLight', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rakr', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
+    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'github', 'gotham', 'gotham256', 'gruvbox', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucid', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'OceanicNextLight', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
@@ -154,3 +177,7 @@ let g:NERDTreeExtensionHighlightColor['md'] = s:aqua " sets the color of css fil
 
 let g:NERDTreeExactMatchHighlightColor = {}
 let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:darkOrange " sets the color for .gitignore files
+
+runtime coc.vimrc
+
+
