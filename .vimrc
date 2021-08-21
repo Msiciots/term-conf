@@ -6,6 +6,8 @@ Plug 'preservim/nerdtree' |
             \ Plug 'ryanoasis/vim-devicons' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'svermeulen/vim-easyclip'
@@ -22,14 +24,12 @@ Plug 'wadackel/vim-dogrun'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'crusoexia/vim-monokai'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
-
+runtime coc.vimrc
 """ NerdTree configure
 au VimEnter *  NERDTree
 autocmd VimEnter * wincmd p
@@ -50,6 +50,14 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 "let g:NERDTreePatternMatchHighlightFullName = 0
 let g:NERDTreeGitStatusConcealBrackets = 1
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
+
+
+
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+
+
 
 """ replace gm with m (mark), because easyclip make m become original d
 nnoremap gm m
@@ -115,10 +123,11 @@ function Rand()
 endfunction
 
 function RandomColorThemes()
-    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'github', 'gotham', 'gotham256', 'gruvbox', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucid', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'OceanicNextLight', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
+    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'gotham', 'gotham256', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
+    echom "Current colorschemes:".themes[r]
     "execute "colorscheme 3dglasses" 
 endfunction
 
@@ -178,6 +187,5 @@ let g:NERDTreeExtensionHighlightColor['md'] = s:aqua " sets the color of css fil
 let g:NERDTreeExactMatchHighlightColor = {}
 let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:darkOrange " sets the color for .gitignore files
 
-runtime coc.vimrc
 
 
