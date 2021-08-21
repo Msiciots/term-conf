@@ -92,7 +92,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 let g:tagbar_width=30
 nnoremap <silent> <F5> :TagbarToggle<CR> 
 
-" Match <tab> to C-n for auto-complete
+ "Match <tab> to C-n for auto-complete
 "function! InsertTabWrapper()
     "let col = col('.') - 1
     "if !col || getline('.')[col - 1] !~ '\k'
@@ -103,6 +103,10 @@ nnoremap <silent> <F5> :TagbarToggle<CR>
 "endfunction
 "inoremap <expr> <tab> InsertTabWrapper()
 "inoremap <s-tab> <c-n>
+
+" map tab for coc.nvim autocomple
+inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
 " set mouse scroll 
 nnoremap <F4> :call ToggleMouse() <CR>
