@@ -156,7 +156,6 @@ alias cat="batcat"
 alias r="ranger"
 alias vim="nvim"
 function lst {
-    echo $1...
     if ! [ -z "$1" ]
     then
         if ! [ -z "$2" ]
