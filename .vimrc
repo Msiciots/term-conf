@@ -1,9 +1,8 @@
 "call plug#begin()
 call plug#begin('~/.vim/plugged')
-"Plug 'preservim/NERDTree'
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons' 
+"Plug 'preservim/nerdtree' |
+            "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            "\ Plug 'ryanoasis/vim-devicons' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
@@ -15,10 +14,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " color themes
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -29,31 +33,26 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
-runtime coc.vimrc
-""" NerdTree configure
-au VimEnter *  NERDTree
+let g:coq_settings = { 'auto_start': v:true }
+
+au VimEnter * CHADopen
 autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufWinEnter * NERDTreeMirror
-nmap <F1> :NERDTreeToggle<CR>
-let NERDTreeMapOpenInTab='<Tab>'
-let NERDTreeShowHidden=1
-let g:airline_powerline_fonts = 1
-let g:NERDTreeGitStatusUseNerdFonts = 1
-let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
-let g:NERDTreeGitStatusShowClean = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:webdevicons_enable_unite = 1
-let g:NERDTreeFileExtensionHighlightFullName = 1
-"let g:NERDTreeExactMatchHighlightFullName = 0
-"let g:NERDTreePatternMatchHighlightFullName = 0
-let g:NERDTreeGitStatusConcealBrackets = 1
-"set guifont=DroidSansMono\ Nerd\ Font\ 11
+nnoremap <F1> <cmd>CHADopen<cr>
 
+set termguicolors
 
+if has('nvim')
+  " use unnamedplus only! or else will double set
+  set clipboard=unnamedplus
+  if getenv('DISPLAY') == v:null
+    exe setenv('DISPLAY', 'FAKE')
+  endif
+else
+  autocmd TextYankPost * call system("c", getreg('"'))
+endif
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 
@@ -105,6 +104,7 @@ nnoremap <silent> <F5> :TagbarToggle<CR>
 "inoremap <s-tab> <c-n>
 
 " map tab for coc.nvim autocomple
+"let b:coc_suggest_disable = 1    "Disable autocomple 
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
@@ -127,12 +127,12 @@ function Rand()
 endfunction
 
 function RandomColorThemes()
-    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'carbonized-dark', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'gotham', 'gotham256', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orange-moon', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod', 'yellow-moon']
+    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'gotham', 'gotham256', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod']
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
     echom "Current colorschemes:".themes[r]
-    "execute "colorscheme 3dglasses" 
+    "execute "colorscheme dracula" 
 endfunction
 
 call RandomColorThemes()
@@ -163,33 +163,5 @@ fu! Cdefault()
     endif
 endfu
 
-" About nerdtree
-" you can add these colors to your .vimrc to help customizing
-let s:brown = "905532"
-let s:aqua =  "3AFFDB"
-let s:blue = "689FB6"
-let s:darkBlue = "44788E"
-let s:purple = "834F79"
-let s:lightPurple = "834F79"
-let s:red = "AE403F"
-let s:beige = "F5C06F"
-let s:yellow = "F09F17"
-let s:orange = "D4843E"
-let s:darkOrange = "F16529"
-let s:pink = "CB6F6F"
-let s:salmon = "EE6E73"
-let s:green = "8FAA54"
-let s:lightGreen = "31B53E"
-let s:white = "FFFFFF"
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
-
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['py'] = s:green " sets the color of css files to blue
-let g:NERDTreeExtensionHighlightColor['md'] = s:aqua " sets the color of css files to blue
-
-let g:NERDTreeExactMatchHighlightColor = {}
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:darkOrange " sets the color for .gitignore files
-
-
-
+"runtime coc.vimrc
+"runtime nerdtree.vimrc
