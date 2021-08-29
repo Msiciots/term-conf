@@ -14,13 +14,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+"Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " color themes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
@@ -35,7 +35,7 @@ call plug#end()
 
 set termguicolors
 
-let g:coq_settings = { 'auto_start': v:true }
+source ~/.vim/coc.vimrc
 
 if has('nvim')
   " use unnamedplus only! or else will double set
@@ -101,8 +101,8 @@ nnoremap <silent> <F5> :TagbarToggle<CR>
 
 " map tab for coc.nvim autocomple
 "let b:coc_suggest_disable = 1    "Disable autocomple 
-inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
-inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
+"inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+"inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
 " set mouse scroll 
 nnoremap <F4> :call ToggleMouse() <CR>
@@ -128,7 +128,7 @@ function RandomColorThemes()
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
     echom "Current colorschemes:".themes[r]
-    "execute "colorscheme dracula" 
+    "execute "colorscheme palenight" 
 endfunction
 
 call RandomColorThemes()
@@ -161,3 +161,5 @@ endfu
 
 "source ~/.vim/coc.vimrc
 source ~/.vim/nerdtree.vimrc
+"let g:coq_settings = { 'auto_start': v:true }
+
