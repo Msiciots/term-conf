@@ -1,8 +1,8 @@
 "call plug#begin()
 call plug#begin('~/.vim/plugged')
-"Plug 'preservim/nerdtree' |
-            "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            "\ Plug 'ryanoasis/vim-devicons' 
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
@@ -21,7 +21,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " color themes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
@@ -33,13 +32,10 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'trusktr/seti.vim'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
-let g:coq_settings = { 'auto_start': v:true }
-
-au VimEnter * CHADopen
-autocmd VimEnter * wincmd p
-nnoremap <F1> <cmd>CHADopen<cr>
 
 set termguicolors
+
+let g:coq_settings = { 'auto_start': v:true }
 
 if has('nvim')
   " use unnamedplus only! or else will double set
@@ -127,7 +123,7 @@ function Rand()
 endfunction
 
 function RandomColorThemes()
-    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'gotham', 'gotham256', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'pyte', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod']
+    let themes = ["gruvbox", "jellybeans", "dracula","palenight","monokai","onehalfdark","devbox-dark-256","seti","abstract","codedark", 'abstract', 'afterglow', 'alduin', 'anderson', 'angr', 'apprentice', 'archery', 'atom', 'ayu', 'challenger_deep', 'deep-space', 'deus', 'dogrun', 'focuspoint', 'gotham', 'gotham256', 'happy_hacking', 'hybrid', 'hybrid_material', 'hybrid_reverse', 'iceberg', 'jellybeans', 'lucius', 'materialbox', 'meta5', 'minimalist', 'molokai', 'molokayo', 'mountaineer-grey', 'mountaineer', 'nord', 'oceanic_material', 'OceanicNext', 'one-dark', 'one', 'onedark', 'onehalfdark', 'orbital', 'PaperColor', 'paramount', 'pink-moon', 'purify', 'rdark-terminal2', 'scheakur',  'seoul256', 'sierra', 'snow', 'solarized8', 'solarized8_flat', 'solarized8_high', 'solarized8_low', 'sonokai', 'space-vim-dark', 'spacecamp', 'spacecamp_lite', 'stellarized', 'tender', 'termschool', '', 'twilight256', 'two-firewatch', 'wombat256mod']
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
@@ -163,5 +159,5 @@ fu! Cdefault()
     endif
 endfu
 
-"runtime coc.vimrc
-"runtime nerdtree.vimrc
+"source ~/.vim/coc.vimrc
+source ~/.vim/nerdtree.vimrc
