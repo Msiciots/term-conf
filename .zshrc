@@ -13,11 +13,14 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH=$PATH:$HOME/Desktop/web/ncbi-blast-2.11.0+/bin
 export BLASTDB=$HOME/Desktop/web/blastdb
 export PATH=$HOME/.local/bin:$PATH
+export EDITOR=nvim
 #cd ~/Desktop
 export START="/home/cosbi20/Desktop"
 if [[ $PWD == $HOME ]]; then
     cd $START
 fi
+# ls_colors
+#source ~/.local/share/lscolors.sh
 
 function ranger {
     local IFS=$'\t\n'
