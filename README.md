@@ -2,6 +2,9 @@
 ## Tool list
 - Vim 8 and above
     - `sudo apt install vim`
+- Neovim
+    - `sudo apt install neovim`
+    - `mkdir -p ~/.config/nvim`, `ln -s ~/.vimrc ~/.config/nvim/init.vim`
 - tmux
     - `sudo apt install tmux`
 - ranger
