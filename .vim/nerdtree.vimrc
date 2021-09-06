@@ -1,14 +1,19 @@
 
 """"" NerdTree configure
-au VimEnter *  NERDTree
-autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufWinEnter * NERDTreeMirror
-nmap <F1> :NERDTreeToggle<CR>
-let NERDTreeMapOpenInTab='<Tab>'
+
+"au VimEnter *  NERDTree
+"autocmd VimEnter * wincmd p
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd BufWinEnter * NERDTreeMirror
+"nmap <F1> :NERDTreeToggle<CR>
+"let NERDTreeMapOpenInTab='<Tab>'
+
+
+
+
 let NERDTreeShowHidden=1
 let g:airline_powerline_fonts = 1
-let g:NERDTreeGitStatusUseNerdFonts = 1
+"let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
 let g:NERDTreeGitStatusShowClean = 1
 let g:webdevicons_enable_nerdtree = 1

@@ -2,12 +2,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons' 
+            \ Plug 'ryanoasis/vim-devicons' | 
+            \ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'svermeulen/vim-easyclip'
 Plug 'jiangmiao/auto-pairs'
@@ -37,15 +38,15 @@ set termguicolors
 
 source ~/.vim/coc.vimrc
 
-if has('nvim')
-  " use unnamedplus only! or else will double set
-  set clipboard=unnamedplus
-  if getenv('DISPLAY') == v:null
-    exe setenv('DISPLAY', 'FAKE')
-  endif
-else
-  autocmd TextYankPost * call system("c", getreg('"'))
-endif
+"if has('nvim')
+  "" use unnamedplus only! or else will double set
+  "set clipboard=unnamedplus
+  "if getenv('DISPLAY') == v:null
+    "exe setenv('DISPLAY', 'FAKE')
+  "endif
+"else
+  "autocmd TextYankPost * call system("c", getreg('"'))
+"endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -57,7 +58,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 """ replace gm with m (mark), because easyclip make m become original d
 nnoremap gm m
 set clipboard=unnamed
-let g:EasyClipShareYanks=1
+"let g:EasyClipShareYanks=1
 let g:EasyClipUseSubstituteDefaults=1
 
 set encoding=UTF-8
@@ -105,6 +106,7 @@ nnoremap <silent> <F5> :TagbarToggle<CR>
 "inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
 " set mouse scroll 
+set mouse=a
 nnoremap <F4> :call ToggleMouse() <CR>
 function! ToggleMouse()
     " check if mouse is enabled
@@ -162,4 +164,5 @@ endfu
 "source ~/.vim/coc.vimrc
 source ~/.vim/nerdtree.vimrc
 "let g:coq_settings = { 'auto_start': v:true }
-
+let g:nerdtree_tabs_open_on_console_startup=1
+map <F1> <plug>NERDTreeTabsToggle<CR>
