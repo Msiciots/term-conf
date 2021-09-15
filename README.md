@@ -40,6 +40,9 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - s : Open file with vertical split.
 #### coc.nvim
 - Depend on [nodejs](https://nodejs.org/)
+- Lists
+    - `:CocInstall coc-pyright`
+    - `:CocInstall coc-html`
 ### tagbar
 - Depend on [ctags](https://github.com/universal-ctags/ctags)
     - `sudo apt install ctags`
