@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+"Plug 'lervag/vimtex'
 "Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 "Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " color themes
@@ -77,6 +78,7 @@ map <C-j> cw<C-r>0<ESC>
 " visual block mode
 nnoremap q <c-v>
 
+set smartindent
 set shiftwidth=4
 set expandtab
 set tabstop=4
@@ -130,7 +132,7 @@ function RandomColorThemes()
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
     echom "Current colorschemes:".themes[r]
-    "execute "colorscheme palenight" 
+    "execute "colorscheme github" 
 endfunction
 
 call RandomColorThemes()
@@ -149,20 +151,26 @@ set background=dark
 syntax on
 syntax enable
 
-
-autocmd FileType c call Cdefault()
-fu! Cdefault()
-    if line("$") == 1
-        call append(0, "#include <stdio.h>")
-        call append(1, "")
-        call append(2, "int main(int argc, char *argv[]) {")
-        call append(4, "    return 0;")
-        call append(5, "}")
-    endif
-endfu
+autocmd BufNewFile *.cpp 0r ~/.vim/template/skeleton.cpp
+autocmd BufNewFile *.c 0r ~/.vim/template/skeleton.c
+"autocmd FileType c call Cdefault()
+"fu! Cdefault()
+    "if line("$") == 1
+        "call append(0, "#include <stdio.h>")
+        "call append(1, "")
+        "call append(2, "int main(int argc, char *argv[]) {")
+        "call append(4, "    return 0;")
+        "call append(5, "}")
+    "endif
+"endfu
 
 "source ~/.vim/coc.vimrc
 source ~/.vim/nerdtree.vimrc
 "let g:coq_settings = { 'auto_start': v:true }
 let g:nerdtree_tabs_open_on_console_startup=1
 map <F1> <plug>NERDTreeTabsToggle<CR>
+
+
+""" for latex
+"let g:tex_flavor = 'latex'
+"let g:vimtex_quickfix_mode = 0
