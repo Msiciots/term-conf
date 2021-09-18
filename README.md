@@ -43,6 +43,8 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - Lists
     - `:CocInstall coc-pyright`
     - `:CocInstall coc-html`
+- [coc-ccls](https://github.com/Maxattax97/coc-ccls)
+    - `sudo snap install ccls --classic`
 ### tagbar
 - Depend on [ctags](https://github.com/universal-ctags/ctags)
     - `sudo apt install ctags`

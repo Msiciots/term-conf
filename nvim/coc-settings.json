@@ -1,0 +1,19 @@
+{
+    "pyright.disableDiagnostics":true,
+    "_comment":{
+    "python.pythonPath": "/home/cosbi20/.config/nvim/pyvenvpath.sh",
+    },
+    "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": "/tmp/ccls"
+         }
+       }
+    }
+  }
+
+}
