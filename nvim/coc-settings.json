@@ -1,7 +1,9 @@
 {
     "pyright.disableDiagnostics":true,
-    "_comment":{
+    "signature.target": "echo",
+    "comment":{
     "python.pythonPath": "/home/cosbi20/.config/nvim/pyvenvpath.sh",
+    "coc.preferences.signatureHelpTarget" :"echo",
     },
     "languageserver": {
     "ccls": {
