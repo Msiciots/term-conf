@@ -45,6 +45,8 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
     - `:CocInstall coc-html`
 - [coc-ccls](https://github.com/Maxattax97/coc-ccls)
     - `sudo snap install ccls --classic`
+#### Color themes
+    recommand: purify nord stellarized abstract termscholl space-vim-dark papercolor deep-space hybrid_reverse
 ### tagbar
 - Depend on [ctags](https://github.com/universal-ctags/ctags)
     - `sudo apt install ctags`
