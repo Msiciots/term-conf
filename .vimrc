@@ -168,7 +168,7 @@ autocmd BufNewFile *.c 0r ~/.vim/template/skeleton.c
 "source ~/.vim/coc.vimrc
 source ~/.vim/nerdtree.vimrc
 "let g:coq_settings = { 'auto_start': v:true }
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 map <F1> <plug>NERDTreeTabsToggle<CR>
 
 
