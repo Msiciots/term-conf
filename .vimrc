@@ -132,7 +132,7 @@ function RandomColorThemes()
 
     let r = Rand()%len(themes)
     execute "colorscheme ".themes[r] 
-    echom "Current colorschemes:".themes[r]
+    "echom "Current colorschemes:".themes[r]
     "execute "colorscheme github" 
 endfunction
 
