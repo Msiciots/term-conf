@@ -32,6 +32,7 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - F4 : Toggle of mouse=a
 - F5 : Toggle of tagbar
 - F6 : Toggle of line number
+- F7 : [vim-flake8](https://github.com/nvie/vim-flake8)
 - C-j Replace with word
 - q : Into visual block mode
 #### NerdTree
@@ -50,6 +51,8 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 ### tagbar
 - Depend on [ctags](https://github.com/universal-ctags/ctags)
     - `sudo apt install ctags`
+### [vim-flake8](https://github.com/nvie/vim-flake8)
+- Depend on `pip install flake8`
 #### Reference
 - [list of flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes/tree/master/colors)
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
