@@ -5,3 +5,5 @@ cp term-conf/.tmux.conf ~/
 cp -r term-conf/.tmux ~/
 #cp term-conf/.zshrc ~/
 cp -r term-conf/ranger/ ~/.config
+
+mkdir -p $HOME/tmux_log

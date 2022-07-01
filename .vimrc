@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+Plug 'nvie/vim-flake8'
 "Plug 'lervag/vimtex'
 "Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 "Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}

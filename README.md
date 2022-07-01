@@ -11,16 +11,22 @@
     - `pip install ranger-fm`
 - `curl --upload-file ./hello.txt https://transfer.sh/hello.txt`
 ## Configuration
-
 ```
 git clone https://github.com/Msiciots/term-conf
 ./term-conf/setup.sh
 ```
+### Vim
 Open vim and execute this command to install plugins.
 ```
 :PlugInstall
 ```
-Custom welcome messages.
+### Tmux
+- [draculatheme](https://draculatheme.com/tmux)
+- [tmux-logging](https://github.com/tmux-plugins/tmux-logging)
+```
+[prefix] + I
+```
+### Custom welcome messages.
 ```
 cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 ```
