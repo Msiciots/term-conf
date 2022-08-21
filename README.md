@@ -41,6 +41,7 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - F7 : [vim-flake8](https://github.com/nvie/vim-flake8)
 - C-j Replace with word
 - q : Into visual block mode
+
 #### NerdTree
 - tab : Open file in new tab.
 - i : Open file with herizontal split.
@@ -57,6 +58,17 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 ### tagbar
 - Depend on [ctags](https://github.com/universal-ctags/ctags)
     - `sudo apt install ctags`
+### Cscope
+- `sudo apt install cscope`
+zs : 找出C語言name的符號
+zg : 找出name定義的地方
+zc : 找出使用name的地方
+zt : 找出name的字串
+ze : 相當於egrep功能，但速度更佳
+zf : 尋找檔案
+zi : 尋找include此檔案的檔案
+zd : 尋找name裡面使用到的函式
+
 ### [vim-flake8](https://github.com/nvie/vim-flake8)
 - Depend on `pip install flake8`
 #### Reference
