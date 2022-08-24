@@ -71,6 +71,8 @@ zd : 尋找name裡面使用到的函式
 
 ### [vim-flake8](https://github.com/nvie/vim-flake8)
 - Depend on `pip install flake8`
+### [vim-fugitive](https://github.com/tpope/vim-fugitive)
+Git blame for vim
 #### Reference
 - [list of flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes/tree/master/colors)
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
