@@ -39,6 +39,8 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 - F5 : Toggle of tagbar
 - F6 : Toggle of line number
 - F7 : [vim-flake8](https://github.com/nvie/vim-flake8)
+- F8 : [SrcExpl](https://github.com/wenlongche/SrcExpl)
+- F9 : [blamer.nvim](https://github.com/APZelos/blamer.nvim)
 - C-j Replace with word
 - q : Into visual block mode
 
