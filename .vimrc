@@ -200,14 +200,14 @@ elseif $CSCOPE_DB != ""
 endif
 set cscopeverbose
 
-nmap zs :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap zg :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap zc :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap zt :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap fs :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap fg :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap fc :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap ft :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap fe :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap ff :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap fi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap fd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " SrcExpl Settings
 " // The switch of the Source Explorer 

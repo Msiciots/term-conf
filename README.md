@@ -62,14 +62,14 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
     - `sudo apt install ctags`
 ### Cscope
 - `sudo apt install cscope`
-zs : 找出C語言name的符號
-zg : 找出name定義的地方
-zc : 找出使用name的地方
-zt : 找出name的字串
-ze : 相當於egrep功能，但速度更佳
-zf : 尋找檔案
-zi : 尋找include此檔案的檔案
-zd : 尋找name裡面使用到的函式
+fs : 找出C語言name的符號
+fg : 找出name定義的地方
+fc : 找出使用name的地方
+ft : 找出name的字串
+fe : 相當於egrep功能，但速度更佳
+ff : 尋找檔案
+fi : 尋找include此檔案的檔案
+fd : 尋找name裡面使用到的函式
 
 ### [vim-flake8](https://github.com/nvie/vim-flake8)
 - Depend on `pip install flake8`
