@@ -59,7 +59,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 
-
+" Fix indentLine conceallevel, the asterisk disappear
+let g:indentLine_fileTypeExclude = ['markdown']
 
 """ replace gm with m (mark), because easyclip make m become original d
 nnoremap gm m
