@@ -60,16 +60,16 @@ cp ./term-conf/01-custom /etc/update-motd.d/01-custom
 ### tagbar
 - Depend on [ctags](https://github.com/universal-ctags/ctags)
     - `sudo apt install ctags`
-### Cscope
-- `sudo apt install cscope`
-fs : 找出C語言name的符號
-fg : 找出name定義的地方
-fc : 找出使用name的地方
-ft : 找出name的字串
-fe : 相當於egrep功能，但速度更佳
-ff : 尋找檔案
-fi : 尋找include此檔案的檔案
-fd : 尋找name裡面使用到的函式
+### Cscope (disabled)
+- `sudo apt install cscope`  
+fs : 找出C語言name的符號  
+fg : 找出name定義的地方  
+fc : 找出使用name的地方  
+ft : 找出name的字串  
+fe : 相當於egrep功能，但速度更佳  
+ff : 尋找檔案  
+fi : 尋找include此檔案的檔案  
+fd : 尋找name裡面使用到的函式  
 
 ### [vim-flake8](https://github.com/nvie/vim-flake8)
 - Depend on `pip install flake8`
