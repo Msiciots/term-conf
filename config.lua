@@ -211,6 +211,7 @@ lvim.builtin.treesitter.highlight.enable = true
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+lvim.keys.normal_mode["q"] = "<c-v>" -- visual block mode
 lvim.keys.normal_mode["<F2>"] = ":set nornu!<CR>" -- 按 F4 切換鼠標狀態
 lvim.keys.insert_mode["<F2>"] = "<ESC>:set nornu!<CR>" -- 按 F4 退出插入模式並切換鼠標狀態
 lvim.keys.visual_mode["<F2>"] = ":set nornu!<CR>" -- 按 F4 退出視覺模式並切換鼠標狀態
@@ -238,3 +239,4 @@ function toggle_mouse()
     print("Enable mouse")
   end
 end
+vim.opt.wrap = true
