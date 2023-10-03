@@ -67,7 +67,7 @@ nnoremap gm m
 set clipboard=unnamed
 "let g:EasyClipShareYanks=1
 let g:EasyClipUseSubstituteDefaults=1
-
+"set ffs=unix
 set encoding=UTF-8
 set nu
 set nornu!
