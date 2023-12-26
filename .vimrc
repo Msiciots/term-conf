@@ -26,6 +26,7 @@ Plug 'APZelos/blamer.nvim'
 "Plug 'zivyangll/git-blame.vim'
 Plug 'wenlongche/SrcExpl'
 "Plug 'lervag/vimtex'
+Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 "Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " color themes
@@ -75,17 +76,13 @@ set cursorline
 
 source ~/.vim/nerdtree.vimrc
 map <F1> <plug>NERDTreeTabsToggle<CR>
-"set nornu!
 nnoremap <F2> :set nornu!<CR>
 " Not auto indent when pasting
 nnoremap <F3> :set nopaste!<CR>
-
 nnoremap <F4> :call ToggleMouse() <CR>
-
 nnoremap <silent> <F5> :TagbarToggle<CR> 
-
-"set nu!
 nnoremap <F6> :set nu!<CR>
+nnoremap <F7> :AnsiEsc<CR>
 nnoremap <F9> :BlamerToggle<CR>
 let g:blamer_delay = 100
 "nnoremap <F9> :<C-u>call gitblame#echo()<CR>
